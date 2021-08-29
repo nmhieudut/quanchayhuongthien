@@ -11,6 +11,7 @@ import Hamburger from "hamburger-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navs } from "src/constants/navbar";
+import Image from "next/image";
 
 export default function Header() {
   const bg = useColorModeValue("white", "gray.800");
@@ -43,7 +44,13 @@ export default function Header() {
 
   const Logo = () => {
     return (
-      <div className="flex justify-center items-center text-3xl">QCHT</div>
+      <div className="flex justify-center items-center">
+        <Link href="/">
+          <a className="opacity-60 duration-500 hover:opacity-100 transform hover:scale-110 transition">
+            <Image src="/images/logo.png" width={100} height={100} alt="logo" />
+          </a>
+        </Link>
+      </div>
     );
   };
 
@@ -89,6 +96,7 @@ export default function Header() {
       className="fixed top-0 left-0 z-50 w-full"
       color={color}
       bg={showBg ? bg : "transparent"}
+      borderBottom={showBg && "1px solid rgba(229,231,235,1)"}
     >
       <NavBarContainer>
         <Logo />

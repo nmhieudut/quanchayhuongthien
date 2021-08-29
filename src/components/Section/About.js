@@ -5,7 +5,7 @@ import Heading from "../Heading";
 export default function About() {
   return (
     <Box className="container py-24">
-      <Heading label="Giới thiệu" />
+      <Heading label="Về chúng tôi" />
       <Box display="flex" my={24} w="full">
         <figure className="md:flex rounded-xl p-8 md:p-0">
           <Image

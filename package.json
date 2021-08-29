@@ -12,10 +12,16 @@
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "aos": "^2.3.4",
+    "contentful": "^8.5.0",
     "framer-motion": "^4",
+    "hamburger-react": "^2.4.1",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-messenger-customer-chat": "^0.8.0",
+    "react-scroll-progress-bar": "^1.1.13",
     "sass": "^1.38.1"
   },
   "devDependencies": {

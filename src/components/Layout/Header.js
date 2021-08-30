@@ -3,19 +3,21 @@ import {
   Collapse,
   Flex,
   Stack,
-  Text,
-  useColorModeValue,
-  useMediaQuery
+  useColorModeValue
 } from "@chakra-ui/react";
 import Hamburger from "hamburger-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navs } from "src/constants/navbar";
-import Image from "next/image";
 
 export default function Header() {
   const bg = useColorModeValue("white", "gray.800");
   const color = useColorModeValue("teal", "teal");
+  const borderColor = useColorModeValue(
+    "1px solid rgba(229,231,235,1)",
+    "1px solid rgb(31, 41, 55)"
+  );
   const [showLinks, setShowLinks] = useState(false);
   const [showBg, setShowBg] = useState(false);
   const wrapperRef = useRef(null);
@@ -46,8 +48,8 @@ export default function Header() {
     return (
       <div className="flex justify-center items-center">
         <Link href="/">
-          <a className="opacity-60 duration-500 hover:opacity-100 transform hover:scale-110 transition">
-            <Image src="/images/logo.png" width={100} height={100} alt="logo" />
+          <a className="opacity-60 duration-300 hover:opacity-100 transform hover:scale-110 transition">
+            <Image src="/images/logo.png" width={80} height={80} alt="logo" />
           </a>
         </Link>
       </div>
@@ -69,7 +71,7 @@ export default function Header() {
   const MenuItem = ({ href, label }) => {
     return (
       <Link href={href}>
-        <a className="opacity-60 duration-500 hover:opacity-100 transform hover:scale-110 transition">
+        <a className="duration-500 transform hover:scale-110 hover:bg-green-900 hover:text-white transition rounded-xl px-8 py-2">
           {label}
         </a>
       </Link>
@@ -96,7 +98,7 @@ export default function Header() {
       className="fixed top-0 left-0 z-50 w-full"
       color={color}
       bg={showBg ? bg : "transparent"}
-      borderBottom={showBg && "1px solid rgba(229,231,235,1)"}
+      borderBottom={showBg && borderColor}
     >
       <NavBarContainer>
         <Logo />
@@ -106,11 +108,10 @@ export default function Header() {
           flexBasis={{ base: "100%", md: "auto" }}
         >
           <Stack
-            spacing={14}
+            py={2}
             align="center"
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
-            p={[4, 4, 4, 4]}
           >
             {navs.map((n, i) => (
               <MenuItem key={i} href={n.to} label={n.label} />

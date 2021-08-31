@@ -1,0 +1,8 @@
+@keyframes smallRotating {
+  from {
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(-15deg);
+  }
+}

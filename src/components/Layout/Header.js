@@ -1,19 +1,24 @@
 import {
   Box,
+  Button,
   Collapse,
   Flex,
   Stack,
+  Tooltip,
+  useColorMode,
   useColorModeValue
 } from "@chakra-ui/react";
 import Hamburger from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { FaMoon, FaRegLightbulb } from "react-icons/fa";
 import { navs } from "src/constants/navbar";
 
 export default function Header() {
   const bg = useColorModeValue("white", "gray.800");
   const color = useColorModeValue("teal", "teal");
+  const { colorMode, toggleColorMode } = useColorMode();
   const borderColor = useColorModeValue(
     "1px solid rgba(229,231,235,1)",
     "1px solid rgb(31, 41, 55)"
@@ -36,7 +41,7 @@ export default function Header() {
   }, [wrapperRef, showLinks]);
 
   function handleShowBg() {
-    if (window.scrollY >= 200) {
+    if (window.scrollY >= 80) {
       setShowBg(true);
     } else setShowBg(false);
   }
@@ -116,6 +121,17 @@ export default function Header() {
             {navs.map((n, i) => (
               <MenuItem key={i} href={n.to} label={n.label} />
             ))}
+            <Tooltip
+              hasArrow
+              placement="bottom-end"
+              label={colorMode === "light" ? "Nền tối" : "Nền sáng"}
+            >
+              <Button onClick={toggleColorMode}>
+                <span>
+                  {colorMode === "light" ? <FaMoon /> : <FaRegLightbulb />}
+                </span>
+              </Button>
+            </Tooltip>
           </Stack>
         </Box>
       </NavBarContainer>

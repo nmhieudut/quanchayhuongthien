@@ -1,13 +1,12 @@
-import { Button, useColorMode } from "@chakra-ui/react";
 import Head from "next/head";
 import Layout from "src/components/Layout";
-import Banner from "src/components/Section/Banner";
 import About from "src/components/Section/About";
+import Banner from "src/components/Section/Banner";
 import BestDishes from "src/components/Section/BestDishes";
+import Info from "src/components/Section/Info";
 import { client } from "src/helpers/contentful";
 
 export default function Home({ dishes }) {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <Head>
@@ -23,20 +22,15 @@ export default function Home({ dishes }) {
 
       <Layout>
         <Banner />
-        <About />
+        <Info />
         <BestDishes dishes={dishes} />
-        <div className="container">
-          <Button onClick={toggleColorMode}>
-            Toggle {colorMode === "light" ? "Dark" : "Light"}
-          </Button>
-        </div>
+        <About />
       </Layout>
     </>
   );
 }
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "dishes" });
-  console.log("res", res);
   return {
     props: {
       dishes: res.items

@@ -3,10 +3,12 @@ import { Image } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function DishCard({ dish }) {
+export default function DishCard({ dish, index }) {
   const [hover, setHover] = useState(false);
   return (
     <Link
+      data-aos="fade-up"
+      data-aos-delay={300 * index}
       href={`/dishes/${dish.fields.slug}`}
       position="relative"
       onMouseEnter={() => setHover(true)}

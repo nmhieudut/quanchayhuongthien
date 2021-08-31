@@ -5,7 +5,7 @@ export const navs = [
   },
   {
     to: "/dishes",
-    label: "Các món ăn"
+    label: "Món ăn"
   },
   {
     to: "/contact",

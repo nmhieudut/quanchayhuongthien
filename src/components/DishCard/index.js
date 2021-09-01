@@ -41,7 +41,7 @@ export default function DishCard({ dish, index }) {
         position="absolute"
         bottom={12}
         opacity={hover ? 1 : 0}
-        className="transition duration-500"
+        className="transition duration-500 font-black"
         fontSize="xl"
       >
         {dish.fields.title}

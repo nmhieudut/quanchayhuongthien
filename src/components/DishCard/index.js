@@ -1,28 +1,22 @@
-import { Box, Text } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Image } from '@chakra-ui/react';
+import { useState } from 'react';
 
-export default function DishCard({ dish, index }) {
+export default function DishCard({ dish, isShowing }) {
   const [hover, setHover] = useState(false);
   return (
     <Box
-      className="mx-4 rounded-xl flex-1 flex flex-col items-center"
-      style={{ backgroundColor: "teal" }}
-      position="relative"
+      className='mx-4 rounded-xl flex justify-center py-4'
+      style={{ backgroundColor: isShowing && 'teal' }}
+      position='relative'
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <Box
-        className="h-20 w-20 cursor-pointer transform transition duration-500"
-        transform={hover && "translateY(-10px)"}
-      >
-        <Image
-          className="absolute top-0 left-0 bottom-0 w-full h-full rounded-full"
-          src={`https:${dish.fields.featured.fields.file.url}`}
-          alt={dish.title}
-        />
-      </Box>
+      <Image
+        className='h-20 w-20 rounded-full cursor-pointer transform transition duration-500'
+        transform={hover && 'translateY(-10px)'}
+        src={`https:${dish.fields.featured.fields.file.url}`}
+        alt={dish.title}
+      />
     </Box>
   );
 }

@@ -6,46 +6,23 @@ import { useState } from "react";
 export default function DishCard({ dish, index }) {
   const [hover, setHover] = useState(false);
   return (
-    <Link
-      data-aos="fade-up"
-      data-aos-delay={300 * index}
-      href={`/dishes/${dish.fields.slug}`}
+    <Box
+      className="mx-4 rounded-xl flex-1 flex flex-col items-center"
+      style={{ backgroundColor: "teal" }}
       position="relative"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="relative h-64 overflow-hidden cursor-pointer">
+      <Box
+        className="h-20 w-20 cursor-pointer transform transition duration-500"
+        transform={hover && "translateY(-10px)"}
+      >
         <Image
-          transform={hover && "scale(1.1)"}
-          className="absolute top-0 bottom-0 w-full h-full transform transition duration-500"
+          className="absolute top-0 left-0 bottom-0 w-full h-full rounded-full"
           src={`https:${dish.fields.featured.fields.file.url}`}
           alt={dish.title}
         />
-      </div>
-
-      <Box
-        opacity={hover ? 0.4 : 0}
-        position="absolute"
-        className="w-full h-full bottom-0 flex justify-center items-end transition duration-500"
-        style={{
-          background: "rgb(203,202,222)",
-          background:
-            "linear-gradient(180deg, rgba(203,202,222,1) 0%, rgba(0,128,128,1) 100%)"
-        }}
-      />
-
-      <Text
-        width="full"
-        color="#fff"
-        textAlign="center"
-        position="absolute"
-        bottom={12}
-        opacity={hover ? 1 : 0}
-        className="transition duration-500 font-black"
-        fontSize="xl"
-      >
-        {dish.fields.title}
-      </Text>
-    </Link>
+      </Box>
+    </Box>
   );
 }

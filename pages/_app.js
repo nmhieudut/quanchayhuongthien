@@ -2,7 +2,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ProgressBar from "react-scroll-progress-bar";
 import "../styles/globals.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,6 +15,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <ChakraProvider>
+      <ProgressBar bgcolor="teal" />
       <Component {...pageProps} />
     </ChakraProvider>
   );

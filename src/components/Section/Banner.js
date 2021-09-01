@@ -27,15 +27,10 @@ export default function Banner() {
             pb={6}
             textAlign={{ base: "center", md: "left" }}
           >
-            Thực phẩm chay tươi và ngon. Từng món ăn chất chứa sự chân thành và chắc chiu từng chút một.
+            Thực phẩm chay tươi và ngon. Từng món ăn chất chứa sự chân thành và
+            chắc chiu từng chút một.
           </Text>
-          <Button
-            colorScheme="teal"
-            size="lg"
-            borderRadius={999}
-            py={8}
-            px={12}
-          >
+          <Button colorScheme="teal" size="lg">
             Khám phá ngay
           </Button>
         </Flex>

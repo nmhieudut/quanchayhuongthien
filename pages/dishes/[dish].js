@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   });
   return {
     paths,
-    fallback: false
+    fallback: true
   };
 }
 export async function getStaticProps({ params }) {
@@ -17,14 +17,23 @@ export async function getStaticProps({ params }) {
     content_type: "dishes",
     "fields.slug": params.dish
   });
-  console.log("res", items);
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false
+      }
+    };
+  }
   return {
     props: {
       dish: items[0]
-    }
+    },
+    revalidate: 10
   };
 }
 export default function DishDetail({ dish }) {
   console.log("-----", dish);
+  if (!dish) return <div>loading...</div>;
   return <Layout>{dish.fields.title}</Layout>;
 }

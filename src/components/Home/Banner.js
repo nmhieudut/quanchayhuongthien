@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-
+import Link from "next/link";
 export default function Banner() {
   return (
     <div className="h-screen w-full overflow-y-hidden z-0">
@@ -30,9 +30,13 @@ export default function Banner() {
             Thực phẩm chay tươi và ngon. Từng món ăn chất chứa sự chân thành và
             chắc chiu từng chút một.
           </Text>
-          <Button colorScheme="teal" size="lg">
-            Khám phá ngay
-          </Button>
+          <Link href="/#introduce">
+            <a>
+              <Button colorScheme="teal" size="lg">
+                Khám phá ngay
+              </Button>
+            </a>
+          </Link>
         </Flex>
         <Box
           flex={1}

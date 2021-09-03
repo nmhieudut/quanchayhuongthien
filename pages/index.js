@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Layout from "src/components/Layout";
-import About from "src/components/Section/About";
-import Banner from "src/components/Section/Banner";
-import BestDishes from "src/components/Section/BestDishes";
-import Info from "src/components/Section/Info";
+import About from "src/components/Home/About";
+import Banner from "src/components/Home/Banner";
+import BestDishes from "src/components/Home/BestDishes";
+import Info from "src/components/Home/Info";
+import Introduce from "src/components/Home/Introduce";
+import MapLocation from "src/components/Home/MapLocation";
 import { client } from "src/helpers/contentful";
 
 export default function Home({ dishes }) {
@@ -23,8 +25,10 @@ export default function Home({ dishes }) {
       <Layout>
         <Banner />
         <Info />
+        <Introduce />
         <BestDishes dishes={dishes} />
         <About />
+        <MapLocation />
       </Layout>
     </>
   );
@@ -34,6 +38,7 @@ export async function getStaticProps() {
   return {
     props: {
       dishes: res.items
-    }
+    },
+    revalidate: 1
   };
 }

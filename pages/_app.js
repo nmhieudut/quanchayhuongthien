@@ -6,7 +6,7 @@ import ProgressBar from "react-scroll-progress-bar";
 import "../styles/globals.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { color } from "src/constants/color";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <ChakraProvider>
-      <ProgressBar bgcolor="teal" />
+      <ProgressBar bgcolor={color.primary} />
       <Component {...pageProps} />
     </ChakraProvider>
   );

@@ -13,6 +13,7 @@ import { SiMyspace } from "react-icons/si";
 import { MdSmokeFree } from "react-icons/md";
 import { FaCalendarCheck, FaShippingFast } from "react-icons/fa";
 import Section from "../Section";
+import { color } from "src/constants/color";
 const data = [
   {
     icon: <AiOutlineWifi />,
@@ -76,8 +77,8 @@ export default function MapInfomation() {
               >
                 {enable ? (
                   <Flex align="center" className="cursor-pointer pb-4 md:pb-0">
-                    <span style={{ color: "teal" }}>{icon}</span>
-                    <Text className="ml-4" color="teal">
+                    <span style={{ color: color.primary }}>{icon}</span>
+                    <Text className="ml-4" color={color.primary}>
                       {label}
                     </Text>
                   </Flex>

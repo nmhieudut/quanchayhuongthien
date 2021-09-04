@@ -14,10 +14,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaMoon, FaRegLightbulb } from "react-icons/fa";
 import { navs } from "src/constants/navbar";
-
+import { color } from "src/constants/color";
 export default function Header() {
   const bg = useColorModeValue("white", "gray.800");
-  const color = useColorModeValue("teal", "teal");
+  const textColor = useColorModeValue(color.primary, color.primary);
   const { colorMode, toggleColorMode } = useColorMode();
   const borderColor = useColorModeValue(
     "1px solid rgba(229,231,235,1)",
@@ -76,7 +76,7 @@ export default function Header() {
   const MenuItem = ({ href, label }) => {
     return (
       <Link href={href}>
-        <a className="duration-500 transform hover:scale-110 hover:bg-green-900 hover:text-white transition rounded-xl px-8 py-2">
+        <a className="duration-500 transform hover:scale-110 hover:bg-blue-500 hover:text-white transition rounded-xl px-8 py-2">
           {label}
         </a>
       </Link>
@@ -101,7 +101,7 @@ export default function Header() {
   return (
     <Box
       className="fixed top-0 left-0 z-50 w-full"
-      color={color}
+      color={textColor}
       bg={showBg ? bg : "transparent"}
       borderBottom={showBg && borderColor}
     >

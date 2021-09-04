@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { color } from "src/constants/color";
 import Heading from "../Heading";
 import Section from "../Section";
 
@@ -34,7 +35,7 @@ export default function About() {
                 </p>
               </blockquote>
               <figcaption className="font-medium">
-                <Text className="text-xl" color="teal">
+                <Text className="text-xl" color={color.primary}>
                   Chị Mai Hương
                 </Text>
                 <Text className="text-gray-500 italic">- Chủ quán</Text>

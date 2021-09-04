@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-@import "./custom/heading";
-@import "./custom/slick";
+@import "./colors";
 @import "./header";
 @import "./banner";
 @import "./animation";
 @import "./info";
+@import "./custom/heading";
+@import "./custom/slick";
+
 * {
   font-family: "Quicksand", sans-serif;
   outline: none;
@@ -64,7 +66,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: teal;
+  background: $primary;
   border-radius: 99px;
   box-shadow: inset 0 0 6px rgba(122, 122, 122, 0.3);
 }

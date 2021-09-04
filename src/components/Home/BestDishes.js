@@ -14,6 +14,7 @@ import Slider from "react-slick";
 import Heading from "../Heading";
 import { AiFillCaretLeft } from "react-icons/ai";
 import Section from "../Section";
+import { color } from "src/constants/color";
 
 export default function BestDishes({ dishes }) {
   const [current, setCurrent] = useState(0);
@@ -28,8 +29,6 @@ export default function BestDishes({ dishes }) {
     initialSlide: 0,
     autoplaySpeed: 4000,
     pauseOnHover: true,
-    nextArrow: <></>,
-    prevArrow: <></>,
     // eslint-disable-next-line react/display-name
     appendDots: dots => (
       <div className="text-center -bottom-5">
@@ -90,7 +89,7 @@ export default function BestDishes({ dishes }) {
             flex={1}
             className="pl-0 md:pl-12 flex flex-col justify-between items-center md:items-start"
           >
-            <Text fontSize="3xl" color="teal" pb={4} fontWeight={600}>
+            <Text fontSize="3xl" color={color.primary} pb={4} fontWeight={600}>
               {dishes[current].fields.title}
             </Text>
             <Text fontSize="lg" pb={4}>
@@ -109,7 +108,7 @@ export default function BestDishes({ dishes }) {
               target="_blank"
               rel="noreferrer"
             >
-              <Button colorScheme="teal" size="lg">
+              <Button colorScheme={color.primary} size="lg">
                 Chi tiết món ăn
               </Button>
             </a>

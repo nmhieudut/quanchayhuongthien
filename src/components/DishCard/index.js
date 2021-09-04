@@ -1,5 +1,6 @@
 import { Box, Image } from "@chakra-ui/react";
 import { useState } from "react";
+import { color } from "src/constants/color";
 
 export default function DishCard({ dish, isShowing }) {
   const [hover, setHover] = useState(false);
@@ -13,7 +14,7 @@ export default function DishCard({ dish, isShowing }) {
       <Image
         className="h-20 w-20 rounded-full cursor-pointer transform transition duration-500"
         transform={hover && "scale(1.3)"}
-        style={{ border: isShowing && "5px solid teal" }}
+        style={{ border: isShowing && `5px solid ${color.primary}` }}
         src={`https:${dish.fields.featured.fields.file.url}`}
         alt={dish.title}
       />

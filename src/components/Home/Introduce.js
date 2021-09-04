@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { color } from "src/constants/color";
 import Section from "../Section";
 
 export default function Introduce() {
@@ -20,7 +21,7 @@ export default function Introduce() {
             lineHeight={{ base: "2.5rem", md: "4rem" }}
             pb={6}
             textAlign={{ base: "center", md: "left" }}
-            color="teal"
+            color={color.primary}
           >
             Món chay ngon chỉ có tại đây
           </Text>

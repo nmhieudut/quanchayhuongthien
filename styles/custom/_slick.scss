@@ -1,8 +1,9 @@
+
 .slick-dots {
   bottom: -3rem !important;
 }
 .slick-dots li.slick-active button:before {
-  color: teal !important;
+  color: $primary !important;
 }
 .slick-dots li button:before {
   font-size: 12px !important;
@@ -10,6 +11,6 @@
 .slick-prev:before,
 .slick-next:before {
   font-size: 30px !important;
-  color: teal !important;
+  color: $primary !important;
   opacity: 1 !important;
 }

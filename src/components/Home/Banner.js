@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
+import { color } from "src/constants/color";
 export default function Banner() {
   return (
     <div className="h-screen w-full overflow-y-hidden z-0">
@@ -17,7 +18,7 @@ export default function Banner() {
             lineHeight={{ base: "2.5rem", md: "4rem" }}
             pb={6}
             textAlign={{ base: "center", md: "left" }}
-            color="teal"
+            color={color.primary}
           >
             Chào mừng đến thiên đường ẩm thực chay
           </Text>
@@ -32,7 +33,7 @@ export default function Banner() {
           </Text>
           <Link href="/#introduce">
             <a>
-              <Button colorScheme="teal" size="lg">
+              <Button bg={color.primary} size="lg">
                 Khám phá ngay
               </Button>
             </a>

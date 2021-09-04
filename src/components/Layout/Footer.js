@@ -1,14 +1,6 @@
 import { Image } from "@chakra-ui/react";
 import React from "react";
-import {
-  SiFacebook,
-  SiGithub,
-  SiInstagram,
-  SiLinkedin,
-  SiReact,
-  SiStyledComponents,
-  SiTailwindcss
-} from "react-icons/si";
+import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import Section from "../Section";
 
 export default function Footer() {
@@ -39,9 +31,9 @@ export default function Footer() {
         <div className="flex justify-center items-center">
           <div className="flex flex-col mt-6 items-center">
             <div className="footer-content__title">
-              Phát triển bởi
+              Thiết kế và phát triển bởi
               <a
-                className="ml-2 transition transform hover:text-red-500"
+                className="ml-2 transition transform text-red-500 hover:text-green-500"
                 href="https://hieuhoahong.vercel.app"
                 target="_blank"
                 rel="noreferrer"
@@ -62,14 +54,6 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <SiFacebook size="1.5rem" />
-              </a>
-              <a
-                className="m-2"
-                href="https://github.com/nmhieudut"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SiGithub size="1.5rem" />
               </a>
               <a
                 className="m-2"

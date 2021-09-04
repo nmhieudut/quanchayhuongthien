@@ -15,47 +15,21 @@ import Heading from "../Heading";
 import { AiFillCaretLeft } from "react-icons/ai";
 import Section from "../Section";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block" }}
-      onClick={onClick}
-    >
-      <AiFillCaretLeft />
-    </div>
-  );
-}
-
 export default function BestDishes({ dishes }) {
   const [current, setCurrent] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     autoplay: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     pauseOnHover: true,
-    centerMode: true,
-    centerPadding: "30px",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <></>,
+    prevArrow: <></>,
     // eslint-disable-next-line react/display-name
     appendDots: dots => (
       <div className="text-center -bottom-5">

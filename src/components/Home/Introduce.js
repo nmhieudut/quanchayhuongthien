@@ -3,9 +3,9 @@ import React from "react";
 import { color } from "src/constants/color";
 import Section from "../Section";
 
-export default function Introduce() {
+export default function Introduce({ hasBg }) {
   return (
-    <Section hasBg>
+    <Section hasBg={hasBg}>
       <div
         id="introduce"
         className="container flex flex-col md:flex-row justify-center items-center py-12"
@@ -40,7 +40,13 @@ export default function Introduce() {
           className="order-1 md:order-2 flex justify-end"
           data-aos="fade-left"
         >
-          <Image src="/images/vegetable.png" alt="banner" ml={4} />
+          <Image
+            src="/images/vegetable.png"
+            alt="banner"
+            ml={4}
+            width="100%"
+            height="100%"
+          />
         </Box>
       </div>
     </Section>

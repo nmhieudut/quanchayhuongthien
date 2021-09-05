@@ -4,7 +4,7 @@ import Link from "next/link";
 import { color } from "src/constants/color";
 export default function Banner() {
   return (
-    <div className="h-screen w-full overflow-y-hidden z-0">
+    <Box className="h-screen w-full overflow-y-hidden z-0">
       <div className="circle z-0 h-screen" />
       <div className="container h-screen w-full relative flex flex-col md:flex-row justify-center items-center py-24">
         <Flex
@@ -33,7 +33,13 @@ export default function Banner() {
           </Text>
           <Link href="/#introduce">
             <a>
-              <Button bg={color.primary} size="lg">
+              <Button
+                border="2px"
+                borderColor={color.primary}
+                variant="outline"
+                size="lg"
+                color={color.primary}
+              >
                 Khám phá ngay
               </Button>
             </a>
@@ -45,13 +51,13 @@ export default function Banner() {
           data-aos="fade-left"
         >
           <Image
-            className="left-image"
+            className="left-image flex-1"
             src="/images/bannerimg.png"
             alt="banner"
             ml={4}
           />
         </Box>
       </div>
-    </div>
+    </Box>
   );
 }

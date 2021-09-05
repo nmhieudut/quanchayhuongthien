@@ -24,11 +24,11 @@ export default function Home({ dishes }) {
 
       <Layout>
         <Banner />
-        <Info />
+        <Info hasBg />
         <Introduce />
-        <BestDishes dishes={dishes} />
+        <BestDishes hasBg dishes={dishes} />
         <About />
-        <MapLocation />
+        <MapLocation hasBg />
       </Layout>
     </>
   );

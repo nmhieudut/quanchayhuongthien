@@ -4,9 +4,9 @@ import { color } from "src/constants/color";
 import Heading from "../Heading";
 import Section from "../Section";
 
-export default function About() {
+export default function About({ hasBg }) {
   return (
-    <Section hasBg={true}>
+    <Section hasBg={hasBg}>
       <Box className="container py-12">
         <Heading label="Về chúng tôi" />
         <Box display="flex" my={12} w="full">

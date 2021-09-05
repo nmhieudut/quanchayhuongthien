@@ -1,22 +1,12 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Link,
-  Tag,
-  Text,
-  useColorModeValue
-} from "@chakra-ui/react";
+import { Box, Button, Image, Tag, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import DishCard from "../DishCard";
 import Slider from "react-slick";
-import Heading from "../Heading";
-import { AiFillCaretLeft } from "react-icons/ai";
-import Section from "../Section";
 import { color } from "src/constants/color";
+import DishCard from "../DishCard";
+import Heading from "../Heading";
+import Section from "../Section";
 
-export default function BestDishes({ dishes }) {
+export default function BestDishes({ dishes, hasBg }) {
   const [current, setCurrent] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const settings = {
@@ -36,13 +26,6 @@ export default function BestDishes({ dishes }) {
       </div>
     ),
     responsive: [
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1
-        }
-      },
       {
         breakpoint: 1480,
         settings: {
@@ -77,7 +60,7 @@ export default function BestDishes({ dishes }) {
   };
 
   return (
-    <Section>
+    <Section hasBg={hasBg}>
       <Box className="semi-container p-12">
         <Heading label="Những món ăn nổi bật" />
         <Box
@@ -108,7 +91,13 @@ export default function BestDishes({ dishes }) {
               target="_blank"
               rel="noreferrer"
             >
-              <Button colorScheme={color.primary} size="lg">
+              <Button
+                border="2px"
+                borderColor={color.primary}
+                variant="outline"
+                size="lg"
+                color={color.primary}
+              >
                 Chi tiết món ăn
               </Button>
             </a>

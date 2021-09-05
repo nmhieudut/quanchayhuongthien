@@ -53,11 +53,11 @@ const data = [
   }
 ];
 
-export default function MapInfomation() {
+export default function MapInfomation({ hasBg }) {
   const bg = useColorModeValue("gray.100", "gray.900");
   return (
-    <Section>
-      <Box className="semi-container h-auto">
+    <Section hasBg={hasBg}>
+      <Box className="semi-container h-auto p-12">
         <Heading label="Thông tin & bản đồ" />
         <Box bg={bg} className="my-12">
           <iframe

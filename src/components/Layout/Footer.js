@@ -1,11 +1,12 @@
-import { Image } from "@chakra-ui/react";
+import { Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
+import { SiFacebook, SiInstagram } from "react-icons/si";
+import { color } from "src/constants/color";
 import Section from "../Section";
 
 export default function Footer() {
   return (
-    <Section hasBg className="my-0">
+    <Section className="my-0">
       <div className="container flex flex-col md:grid md:grid-cols-3 md:grid-4 py-5">
         <div className="flex justify-center md:justify-start">
           <div className="flex flex-col mt-6 items-center">
@@ -20,7 +21,9 @@ export default function Footer() {
                   />
                 </div>
                 <div className="ml-2 flex flex-col items-center lg:items-start">
-                  <p className="text-xl font-bold">Hương thiền</p>
+                  <Text color={color.primary} className="text-xl font-bold">
+                    Hương thiền
+                  </Text>
                   <p>Quán chay</p>
                 </div>
               </div>

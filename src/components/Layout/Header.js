@@ -53,7 +53,7 @@ export default function Header() {
     return (
       <div className="flex justify-center items-center">
         <Link href="/">
-          <a className="opacity-60 duration-300 hover:opacity-100 transform hover:scale-110 transition">
+          <a className="duration-300 transform hover:scale-110 transition">
             <Image src="/images/logo.png" width={80} height={80} alt="logo" />
           </a>
         </Link>
@@ -76,7 +76,7 @@ export default function Header() {
   const MenuItem = ({ href, label }) => {
     return (
       <Link href={href}>
-        <a className="duration-500 transform hover:scale-110 hover:bg-blue-500 hover:text-white transition rounded-xl px-8 py-2">
+        <a className="duration-500 transform hover:scale-110 hover:-translate-y-1 transition rounded-xl px-8 py-2 font-black">
           {label}
         </a>
       </Link>
@@ -126,7 +126,12 @@ export default function Header() {
               placement="bottom-end"
               label={colorMode === "light" ? "Nền tối" : "Nền sáng"}
             >
-              <Button onClick={toggleColorMode}>
+              <Button
+                border="2px"
+                borderColor={color.primary}
+                color={color.primary}
+                onClick={toggleColorMode}
+              >
                 <span>
                   {colorMode === "light" ? <FaMoon /> : <FaRegLightbulb />}
                 </span>
@@ -135,7 +140,6 @@ export default function Header() {
           </Stack>
         </Box>
       </NavBarContainer>
-      <Collapse in={showLinks} animateOpacity></Collapse>
     </Box>
   );
 }

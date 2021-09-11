@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url("http://fonts.cdnfonts.com/css/svn-gilroy");
 @import "./colors";
 @import "./header";
 @import "./banner";
@@ -9,9 +9,10 @@
 @import "./info";
 @import "./custom/heading";
 @import "./custom/slick";
+@import "./custom/button";
 
 * {
-  font-family: "Quicksand", sans-serif;
+  font-family: "SVN-Gilroy", sans-serif;
   outline: none;
   letter-spacing: 1px;
 }

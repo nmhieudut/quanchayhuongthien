@@ -1,0 +1,13 @@
+.btn {
+  margin-top: 1rem;
+  color: #fff;
+  background: $primary;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.8rem 2rem;
+  transition: all 0.2s linear;
+}
+.btn:hover {
+  background: $secondary;
+  letter-spacing: 0.1rem;
+}

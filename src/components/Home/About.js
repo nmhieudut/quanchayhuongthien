@@ -10,7 +10,7 @@ export default function About({ hasBg }) {
       <Box className="container py-12">
         <Heading label="Về chúng tôi" />
         <Box display="flex" my={12} w="full">
-          <figure className="md:flex rounded-xl p-8 md:p-0">
+          <figure className="flex flex-col md:flex-row rounded-xl p-8 md:p-0 gap-6">
             <Flex justify="center" align="center" flex={1}>
               <Image
                 className="w-48 h-48 md:w-96 md:h-96 md:rounded-none rounded-full mx-auto"
@@ -24,7 +24,6 @@ export default function About({ hasBg }) {
               flexDirection="column"
               justify="center"
               align="flex-start"
-              className="pt-6 md:p-8 space-y-4"
             >
               <blockquote>
                 <p className="text-base leading-8">

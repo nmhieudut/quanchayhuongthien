@@ -54,7 +54,7 @@ export default function Header() {
       <div className="flex justify-center items-center">
         <Link href="/">
           <a className="duration-300 transform hover:scale-110 transition">
-            <Image src="/images/logo.png" width={80} height={80} alt="logo" />
+            <Image src="/images/logo.png" width={60} height={60} alt="logo" />
           </a>
         </Link>
       </div>
@@ -76,7 +76,7 @@ export default function Header() {
   const MenuItem = ({ href, label }) => {
     return (
       <Link href={href}>
-        <a className="duration-500 transform hover:scale-110 hover:-translate-y-1 transition rounded-xl px-8 py-2 font-black">
+        <a className="text-sm duration-500 hover:-translate-y-1 hover:bg-green-900 hover:text-white transition rounded-xl px-8 py-2">
           {label}
         </a>
       </Link>
@@ -104,6 +104,7 @@ export default function Header() {
       color={textColor}
       bg={showBg ? bg : "transparent"}
       borderBottom={showBg && borderColor}
+      boxShadow="0 .5rem 1.5rem rgba(0,0,0,.1)"
     >
       <NavBarContainer>
         <Logo />
@@ -113,7 +114,6 @@ export default function Header() {
           flexBasis={{ base: "100%", md: "auto" }}
         >
           <Stack
-            py={2}
             align="center"
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}

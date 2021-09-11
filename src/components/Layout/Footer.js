@@ -33,21 +33,6 @@ export default function Footer() {
 
         <div className="flex justify-center items-center">
           <div className="flex flex-col mt-6 items-center">
-            <div className="footer-content__title">
-              Thiết kế và phát triển bởi
-              <a
-                className="ml-2 transition transform text-red-500 hover:text-green-500"
-                href="https://hieuhoahong.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>Hieu Hoa Hong</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center md:justify-end">
-          <div className="flex flex-col mt-6 items-start">
             <div className="footer-content__title">Nền tảng khác</div>
             <div className="flex">
               <a
@@ -65,6 +50,21 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <SiInstagram size="1.5rem" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center items-center md:justify-end">
+          <div className="flex flex-col mt-6 items-start">
+            <div className="footer-content__title">
+              Thiết kế và phát triển bởi
+              <a
+                className="ml-2 transition transform text-red-500 hover:text-green-500"
+                href="https://hieuhoahong.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Hieu Hoa Hong</span>
               </a>
             </div>
           </div>
